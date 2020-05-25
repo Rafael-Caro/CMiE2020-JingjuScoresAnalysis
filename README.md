@@ -31,3 +31,6 @@ import jingjuScoresAnalysis as jsa
 ```
   
 For the use of the two functions of this code, please refer to their docstrings.
+
+## License
+The content of this repository is licensed under the terms of the GNU General Public License (v3).
