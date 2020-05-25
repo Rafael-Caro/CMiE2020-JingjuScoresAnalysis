@@ -1,5 +1,7 @@
 # Annotation files
-These two annotation files contain information about the scores of the **Jingju Music Scores Dataset** created for this repository. The information contained in each of the files is as follows.
+These two annotation files contain information about the scores of the **Jingju Music Scores Dataset** created for this repository. The files are simplified versions of those accompanying the original [**Jingju Music Scores Collection**](https://doi.org/10.5281/zenodo.1285612), in order to fit the educational purposes of this repository.
+
+The information contained in each of the files is as follows.
 
 #### `score-annotations.csv`
 
