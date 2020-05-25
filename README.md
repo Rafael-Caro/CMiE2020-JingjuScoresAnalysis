@@ -20,10 +20,14 @@ Due to copyright issues, the dataset is only available for research purposes und
 ## Use
 To run the code you need to install the libraries `music21` and `Matplotlib`. To simplify this task, and install the same versions used in this repository, you can use the `requirements.txt` file, by running the following command:
 
-  pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
   
 Then you should import `jingjuScoresAnalysis` to your code. For that, it is recommended to write your code in the same folder where the file `jingjuScoresAnalysis.py` is saved. It is suggested to import it in the following way:
 
-  import jingjuScoresAnalysis as jsa
+```python
+import jingjuScoresAnalysis as jsa
+```
   
 For the use of the two functions of this code, please refer to their docstrings.
