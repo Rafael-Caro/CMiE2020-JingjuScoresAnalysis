@@ -5,7 +5,7 @@ The information contained in each of the files is as follows.
 
 #### `score-annotations.csv`
 
-This file contains general information and metadata for each of the 33 scores of the dataset. The content of each column is the following:
+This file contains general information and metadata for each of the 32 scores of the dataset. The content of each column is the following:
 
 0. name of the score file
 1. title of the aria transcribed in the score in original Chinese script, including play and the character who sings it
