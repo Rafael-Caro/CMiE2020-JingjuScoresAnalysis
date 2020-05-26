@@ -8,6 +8,8 @@ The code is written using `Python 3`. It also requires the libraries [`music21`]
 
 The `annotations` folder contains two files with manual annotations for the collection of machine readable scores gathered for this repository. The `line-annotations.csv` contains information for each melodic line in the collection. The `score-annotations.csv` file contains metadata and musical descriptions of each score in the collection. Please see the `README` file in that folder for more details.
 
+The Jupyter Notebook `CMiE2020-JingjuScoresAnalysis-DEMO.ipynb` contains examples of how to use the code.
+
 ## Dataset
 To run the code you need the **Jingju Music Scores Dataset** specifically created for this repository. This dataset is a subset of the [**Jingju Music Scores Collection**](https://doi.org/10.5281/zenodo.1285612), created by the [**CompMusic** project](http://compmusic.upf.edu/) from the Music Technology Group (Universitat Pompeu Fabra, Barcelona) for the computational study of jingju music. The dataset contains 33 machine readable scores, edited using [MuseScore](https://musescore.org/) from printed sources. This dataset is a simplified version of the original collection, in which the number of *banshi* (metrical patterns) has been reduced to the three more representative ones, and scores with no full instrumental accompaniment have been discarded. However, the dataset still covers the most representative elements of the jingju musical system:
 
@@ -31,6 +33,8 @@ import jingjuScoresAnalysis as jsa
 ```
   
 For the use of the two functions of this code, please refer to their docstrings.
+
+You can run the Jupyter Notebook `CMiE2020-JingjuScoresAnalysis-DEMO.ipynb` to see some examples of use.
 
 ## License
 The content of this repository is licensed under the terms of the GNU General Public License (v3).
