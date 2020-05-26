@@ -115,13 +115,13 @@ def pitchHistogram(path2annotations, path2scoresFolder,
     # Iterate over all the rows of the annotations
     for row in lineAnnotations:
         # Retrieve information from each row
-        scoreFile = row.split(',')[0] # score to which the line belongs
-        rt = row.split(',')[1]        # role type of the line
-        sq = row.split(',')[2]        # shengqiang of the line
-        bs = row.split(',')[3]        # banshi of the line
-        lt = row.split(',')[4]        # line type of the line
-        l_start = row.split(',')[5]   # starting offset of the line
-        l_end = row.split(',')[6]     # ending offset of the line
+        scoreFile = row.split(',')[0]        # score to which the line belongs
+        rt = row.split(',')[1]               # role type of the line
+        sq = row.split(',')[2]               # shengqiang of the line
+        bs = row.split(',')[3]               # banshi of the line
+        lt = row.split(',')[4]               # line type of the line
+        l_start = float(row.split(',')[6])   # starting offset of the line
+        l_end = float(row.split(',')[7])     # ending offset of the line
         # Check if the information about the current line matches the given
         # musical features
         if (rt in roletype and sq in shengqiang and
@@ -140,8 +140,10 @@ def pitchHistogram(path2annotations, path2scoresFolder,
                 p = hf.getVocalPart(s)
                 # Retrieve all notes
                 nn = p.flat.notes.stream()
-                # Iterate over notes
-                for n in nn:
+                # Retrieve the corresponding line
+                nnLine = nn.getElementsByOffset(l_start, l_end).stream()
+                # Iterate over the line's notes
+                for n in nnLine:
                     # Retrieve duration
                     nd = n.quarterLength # nd for 'note duration'
                     # If gracenotes is set to False and the duration of the
@@ -304,13 +306,13 @@ def intervalHistogram(path2annotations, path2scoresFolder,
     # Iterate over all the rows of the annotations
     for row in lineAnnotations:
         # Retrieve information from each row
-        scoreFile = row.split(',')[0] # score to which the line belongs
-        rt = row.split(',')[1]        # role type of the line
-        sq = row.split(',')[2]        # shengqiang of the line
-        bs = row.split(',')[3]        # banshi of the line
-        lt = row.split(',')[4]        # line type of the line
-        l_start = row.split(',')[5]   # starting offset of the line
-        l_end = row.split(',')[6]     # ending offset of the line
+        scoreFile = row.split(',')[0]        # score to which the line belongs
+        rt = row.split(',')[1]               # role type of the line
+        sq = row.split(',')[2]               # shengqiang of the line
+        bs = row.split(',')[3]               # banshi of the line
+        lt = row.split(',')[4]               # line type of the line
+        l_start = float(row.split(',')[6])   # starting offset of the line
+        l_end = float(row.split(',')[7])     # ending offset of the line
         # Check if the information about the current line matches the given
         # musical features
         if (rt in roletype and sq in shengqiang and
@@ -329,8 +331,10 @@ def intervalHistogram(path2annotations, path2scoresFolder,
                 p = hf.getVocalPart(s)
                 # Retrieve all notes and rests
                 nr = p.flat.notesAndRests.stream()
-                # Iterate over the indexes of notes and rests
-                for i in range(len(nr)-1):
+                # Retrieve the corresponding line
+                nrLine = nr.getElementsByOffset(l_start, l_end).stream()
+                # Iterate over the indexes of the line's notes and rests
+                for i in range(len(nrLine)-1):
                     # Retrieve the elements in the current index and the next
                     n1 = nr[i]
                     n2 = nr[i+1]
